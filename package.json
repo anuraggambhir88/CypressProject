@@ -8,13 +8,14 @@
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
     "junit-report-delete": "rm -rf cypress/results/junit/result.xml",
     "delete-all-result": "rm -rf cypress/results/* || true",
-    "machawesome-merge":"npx mochawesome-merge cypress/results/mochawesome/*json > mochawesome.json && npx marge mochawesome.json",
-    "delete-mochawesome-html":"rm -rf mochawesome-report/* || true"
+    "machawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-html": "rm -rf mochawesome-report/* || true"
   },
   "author": "anurag",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.11.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-mochawesome-reporter": "^3.2.3",
     "cypress-multi-reporters": "^1.6.1",
     "mocha-junit-reporter": "^2.1.1",
@@ -24,5 +25,11 @@
   },
   "dependencies": {
     "random-email": "^1.0.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinations":false,
+    "stepDefinitions": "cypress/support/step_definations"
+    
+    
   }
 }
